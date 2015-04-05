@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="410"
+   height="297"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.43"
+   sodipodi:docbase="/home/harntool/src/study"
+   sodipodi:docname="test.svg"
+   version="1.0">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="350"
+     inkscape:cy="177.14286"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="872"
+     inkscape:window-height="591"
+     inkscape:window-x="250"
+     inkscape:window-y="147" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#0000ff;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect1307"
+       width="194.28572"
+       height="117.14286"
+       x="85.714287"
+       y="103.79076" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="208.57143"
+       y="189.50504"
+       id="text1309"><tspan
+         sodipodi:role="line"
+         id="tspan1311"
+         x="208.57143"
+         y="189.50504">Hallihallo</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:#ffff00;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1313"
+       sodipodi:sides="5"
+       sodipodi:cx="294.28571"
+       sodipodi:cy="178.07648"
+       sodipodi:r1="39.795395"
+       sodipodi:r2="19.897697"
+       sodipodi:arg1="-1.2036225"
+       sodipodi:arg2="-0.57530396"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 308.57142,140.93362 L 310.98041,167.25034 L 334.02519,180.18522 L 309.74092,190.60862 L 304.56034,216.52261 L 287.14285,196.64791 L 260.8963,199.72875 L 274.41596,177.0221 L 263.37528,153.01218 L 289.14839,158.85341 L 308.57142,140.93362 z " />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ff0000;fill-opacity:0.75;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1315"
+       sodipodi:cx="111.42857"
+       sodipodi:cy="109.50504"
+       sodipodi:rx="22.857143"
+       sodipodi:ry="22.857143"
+       d="M 134.28572 109.50504 A 22.857143 22.857143 0 1 1  88.57143,109.50504 A 22.857143 22.857143 0 1 1  134.28572 109.50504 z" />
+  </g>
+</svg>

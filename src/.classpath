@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="study/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/batik.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/javazoom_jl1.0.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/javazoom_mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/jogl.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/jogl-gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/jorbis_jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/tritonus_jorbis.jar"/>
+	<classpathentry kind="lib" path="/home/harntool/harntool/tritonus_share.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
