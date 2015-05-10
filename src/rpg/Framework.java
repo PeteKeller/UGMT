@@ -127,14 +127,23 @@ public class Framework extends WindowAdapter {
      */
     private Framework() throws Exception {
         Properties props = new Properties();
+        sizes = new Properties();
+        
         try {
-            props.load(new FileInputStream("properties"));
-            sizes = new Properties();
+            File pf = new File("properties");
+            if (pf.exists()) {
+                props.load(new FileInputStream(pf));
+            }
+        } catch(Exception e) {
+            // Debug
+            e.printStackTrace();
+        }
+
+        try {
             File sf = new File(".state");
             if (sf.exists())
                 sizes.load(new FileInputStream(sf));
-        }
-        catch(Exception e) {
+        } catch(Exception e) {
             // Debug
             e.printStackTrace();
         }
@@ -219,7 +228,9 @@ public class Framework extends WindowAdapter {
         allPlugins = new Hashtable();
 
         TreeSet sort = new TreeSet();
-        for (int i = 0; all != null && i < all.length; i++) sort.add(all[i]);
+        for (int i = 0; all != null && i < all.length; i++) {
+            sort.add(all[i]);
+        }
         Iterator iter = sort.iterator();
         
         // Primary load
@@ -228,9 +239,23 @@ public class Framework extends WindowAdapter {
             String curr = (String) iter.next();
 
             File pf = new File(curr);
-            if (pf == null || !pf.isDirectory() || curr.equals("lib")) {
+            if (!pf.isDirectory()) {
                 continue;
             }
+            
+            // If the directory does not have a jar file with the same name
+            //    as the directory,it is not a plugin directory ... skip it.
+            String jarPath = pf.toURI().toURL().toString() + pf.getName() + ".jar";
+            try {
+                File jarFile = new File(jarPath);
+                if (!jarFile.exists()){
+                    continue;
+                }
+            } catch(Exception e) {
+                // Debug
+                e.printStackTrace();
+            }
+
             
             // Next line was commented out on 10 MAY 2015 to get system under
             //     test using UISpec4j.  Once I have a way of using UISpec4j 
