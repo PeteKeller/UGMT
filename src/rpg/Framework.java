@@ -186,7 +186,14 @@ public class Framework extends WindowAdapter {
         //all = new String[] { "maps", "combat", "groups" };
 
 	// Splash
-        final JFrame splash = Splash.createSplash(all);
+        // Next line was commented out on 10 MAY 2015 to get system under
+        //     test using UISpec4j.  Once I have a way of using UISpec4j 
+        //     to select the main window of UGMT and not the splash window
+        //     I will uncomment this.
+        //
+        // TODO: Convert from a static accessor.
+        //
+        // final JFrame splash = Splash.createSplash(all);
 
         // Helpers
         DocumentBuilderFactory f = DocumentBuilderFactory.newInstance();
@@ -221,8 +228,18 @@ public class Framework extends WindowAdapter {
             String curr = (String) iter.next();
 
             File pf = new File(curr);
-            if (pf == null || !pf.isDirectory() || curr.equals("lib")) continue;
-            Splash.loadlabel.setText("Loading " + curr + " ...");
+            if (pf == null || !pf.isDirectory() || curr.equals("lib")) {
+                continue;
+            }
+            
+            // Next line was commented out on 10 MAY 2015 to get system under
+            //     test using UISpec4j.  Once I have a way of using UISpec4j 
+            //     to select the main window of UGMT and not the splash window
+            //     I will uncomment this.
+            //
+            // TODO: Convert from a static accessor.
+            //
+            // Splash.loadlabel.setText("Loading " + curr + " ...");
 
             try {
                 JPanel plugPanel = new JPanel();
@@ -269,7 +286,14 @@ public class Framework extends WindowAdapter {
 	    IExport exp = (IExport) exports.iterator().next();
 	    exports.remove(exp);
             try {
-                Splash.loadlabel.setText("Connecting... " + exp.getType());
+                // Next line was commented out on 10 MAY 2015 to get system under
+                //     test using UISpec4j.  Once I have a way of using UISpec4j 
+                //     to select the main window of UGMT and not the splash window
+                //     I will uncomment this.
+                //
+                // TODO: Convert from a static accessor.
+                //
+                // Splash.loadlabel.setText("Connecting... " + exp.getType());
                 announceCond(exp);
             }
             catch (Throwable t) {
@@ -281,13 +305,28 @@ public class Framework extends WindowAdapter {
 	startup = 2;
 
         // Show it off
-        for (int i = 0; i < frame.length; i++)
-            SwingUtilities.invokeLater(new MyThread(frame[i], 0));
-            SwingUtilities.invokeLater(new Thread() {
-                    public void run() {
-                        splash.dispose();
-                    }
-                });
+        for (int i = 0; i < frame.length; i++) {
+            SwingUtilities.invokeLater(
+                    new MyThread(frame[i], 0)
+            );
+        }
+        
+        // Next lines were commented out on 10 MAY 2015 to get system under
+        //     test using UISpec4j.  Once I have a way of using UISpec4j 
+        //     to select the main window of UGMT and not the splash window
+        //     I will uncomment this.
+        //
+        // TODO: Convert from a static accessor.
+        //
+//        SwingUtilities.invokeLater(
+//                new Thread() {
+//                    @Override
+//                    public void run() {
+//                        splash.dispose();
+//                    }
+//                }
+//        );
+        
         for (int i = 0; i < frame.length; i++) {
             if (sizes.getProperty("window." + i) != null) {
                 String xy[] = sizes.getProperty("window." + i).split(",");
