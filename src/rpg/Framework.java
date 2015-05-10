@@ -20,7 +20,6 @@ import java.nio.channels.*;
 import java.util.*;
 import java.util.zip.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.parsers.*;
@@ -38,20 +37,6 @@ import org.xml.sax.*;
  * @author Michael Jung
  */
 public class Framework extends WindowAdapter {
-    /** Look and feel samples */
-    private final static String[] looknfeel = new String[] {
-	"com.incors.plaf.kunststoff.KunststoffLookAndFeel",
-        "com.birosoft.liquid.LiquidLookAndFeel",
-        "com.jgoodies.looks.plastic.Plastic3DLookAndFeel",
-        "org.compiere.plaf.CompierePLAF",
-	"com.sun.java.swing.plaf.windows.WindowsLookAndFeel",
-        "com.oyoaha.swing.plaf.oyoaha.OyoahaLookAndFeel",
-        "de.muntjak.tinylookandfeel.TinyLookAndFeel",
-	"javax.swing.plaf.metal.MetalLookAndFeel",
-	"com.sun.java.swing.plaf.motif.MotifLookAndFeel",
-	"com.sun.java.swing.plaf.gtk.GTKLookAndFeel",
-	"com.sun.java.swing.plaf.mac.MacLookAndFeel"
-    };
 
     /** get $HOME */
     private final static String HOME = System.getProperty("user.home");
@@ -120,15 +105,6 @@ public class Framework extends WindowAdapter {
         try {
             UIManager.setLookAndFeel
                 (UIManager.getSystemLookAndFeelClassName());
-            //(looknfeel[0]);
-
-            /*
-            File file =
-                new File(System.getProperty("user.dir"), "slushy10.zotm");
-            OyoahaLookAndFeel lnf = new OyoahaLookAndFeel();
-            if(file.exists()) lnf.setOyoahaTheme(file);
-            UIManager.setLookAndFeel(lnf);
-            */
         }
         catch (Exception e) {
             System.out.println("WARNING: Unable to load native look and feel");
@@ -200,8 +176,6 @@ public class Framework extends WindowAdapter {
             tabpane.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put
                 (KeyStroke.getKeyStroke("ctrl LESS"), "prev");
         }
-
-        boolean useLast = false;
 
 	if (version) System.err.println("Framework: 0.11");
 
@@ -553,30 +527,6 @@ public class Framework extends WindowAdapter {
             for (int i = 0; i < frame.length; i++)
                 frame[i].setCursor(Cursor.getDefaultCursor());
     }
-
-//    /**
-//     * This method rolls an n-sided die. Invalid entries return themselves.
-//     * @param n maximum number to roll
-//     * @return random number in 1..n
-//     */
-//    public static int d(int n) {
-//	if (n > 1) return 1 + Math.abs(rand.nextInt()) % n;
-//	return n;
-//    }
-//
-//    /**
-//     * This method rolls m n-sided dice. Invalid entries return themselves,
-//     * i.e. m*n.
-//     * @param n maximum number to roll
-//     * @return random number in 1..n
-//     */
-//    public static int d(int m, int n) {
-//	if (m < 1) return m*n;
-//	int ret = 0;
-//	for (int i = 0; i < m; i++)
-//	    ret += d(n);
-//	return ret;
-//    }
 
     /**
      * Versioning information to help debugging a multi-plugin environment.
