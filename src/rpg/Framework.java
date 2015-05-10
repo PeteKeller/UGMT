@@ -16,8 +16,12 @@ package rpg;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.net.URI;
+import java.net.URL;
 import java.nio.channels.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.zip.*;
 import javax.swing.*;
 import javax.xml.transform.*;
@@ -125,43 +129,47 @@ public class Framework extends WindowAdapter {
      * passive GUI mode. The GUI consists of <n> windows or panels, each
      * contains a set of plugins.
      */
-    private Framework() throws Exception {
+    private Framework() throws ParserConfigurationException, 
+            TransformerConfigurationException {
         Properties props = new Properties();
         sizes = new Properties();
         
-        try {
-            File pf = new File("properties");
-            if (pf.exists()) {
+        File pf = new File("properties");
+        if (pf.exists()) {
+            try {
                 props.load(new FileInputStream(pf));
+            } catch (IOException ioe) {
+                // Debug
+                ioe.printStackTrace();
             }
-        } catch(Exception e) {
-            // Debug
-            e.printStackTrace();
         }
 
-        try {
-            File sf = new File(".state");
-            if (sf.exists())
+        File sf = new File(".state");
+        if (sf.exists()) {
+            try {
                 sizes.load(new FileInputStream(sf));
-        } catch(Exception e) {
-            // Debug
-            e.printStackTrace();
+            } catch(IOException ioe) {
+                // Debug
+                ioe.printStackTrace();
+            }
         }
-
+        
         // Popup?
         popup = "true".equals(props.getProperty("tabs.popup"));
 
         // Get window list
-        ArrayList wl = new ArrayList();
+        ArrayList windowList = new ArrayList();
         for (int i = 1; props.getProperty("window." + i) != null; i++) {
             String[] plugs = props.getProperty("window." + i).split(",");
-            wl.add(plugs);
+            for (String plug : plugs) {
+                System.out.println(plug);
+            }
+            windowList.add(plugs);
         }
-        if (wl.size() == 0) wl.add(new String[0]);
-
+        
         // GUI Frame
-        frame = new JFrame[wl.size()];
-        plugins = new ArrayList[wl.size()];
+        frame = new JFrame[windowList.size()];
+        plugins = new ArrayList[windowList.size()];
         for (int i = 0; i < frame.length; i++) {
             frame[i] = new JFrame("Universal Gamemaster Tool");
             frame[i].getContentPane().setLayout(new BorderLayout());
@@ -172,9 +180,9 @@ public class Framework extends WindowAdapter {
             frame[i].getContentPane().setLayout(new BorderLayout());
             frame[i].getContentPane().add(tabpane, BorderLayout.CENTER);
             if (edit) {
-                JLabel lab1 = new JLabel("EDIT MODE");
-                lab1.setHorizontalAlignment(SwingConstants.CENTER);
-                frame[i].getContentPane().add(lab1, BorderLayout.SOUTH);
+                JLabel editLabel = new JLabel("EDIT MODE");
+                editLabel.setHorizontalAlignment(SwingConstants.CENTER);
+                frame[i].getContentPane().add(editLabel, BorderLayout.SOUTH);
             }
             plugins[i] = new ArrayList();
 
@@ -191,7 +199,7 @@ public class Framework extends WindowAdapter {
         // Load plugins. We silently do nothing in case no plugins are
         // available or the main directory does not exist.
         File dir = new File(".");
-        String[] all = (dir != null ? dir.list() : null);
+        String[] all = dir.list();
         //all = new String[] { "maps", "combat", "groups" };
 
 	// Splash
@@ -209,13 +217,21 @@ public class Framework extends WindowAdapter {
         f.setNamespaceAware(true);
         docBuilder = f.newDocumentBuilder();
         docBuilder.setErrorHandler(new ErrorHandler() {
+                @Override
                 public void error(SAXParseException e) {
                     System.err.println
                         ("line:" + e.getLineNumber() +
                          ";column:" + e.getColumnNumber());
                 }
-                public void fatalError(SAXParseException e) { error(e); }
-                public void warning(SAXParseException e) { error(e); }
+                @Override
+                public void fatalError(SAXParseException e) {
+                    error(e); 
+                }
+                
+                @Override
+                public void warning(SAXParseException e) { 
+                    error(e);
+                }
             });
         transFact = TransformerFactory.newInstance();
         transFormer = transFact.newTransformer();
@@ -228,7 +244,7 @@ public class Framework extends WindowAdapter {
         allPlugins = new Hashtable();
 
         TreeSet sort = new TreeSet();
-        for (int i = 0; all != null && i < all.length; i++) {
+        for (int i = 0; i < all.length; i++) {
             sort.add(all[i]);
         }
         Iterator iter = sort.iterator();
@@ -237,26 +253,21 @@ public class Framework extends WindowAdapter {
         startup = 0;
         while (iter.hasNext()) {
             String curr = (String) iter.next();
-
-            File pf = new File(curr);
-            if (!pf.isDirectory()) {
+            
+            File testFile = new File(curr);
+            if (!testFile.isDirectory()) {
                 continue;
             }
             
             // If the directory does not have a jar file with the same name
             //    as the directory,it is not a plugin directory ... skip it.
-            String jarPath = pf.toURI().toURL().toString() + pf.getName() + ".jar";
-            try {
-                File jarFile = new File(jarPath);
-                if (!jarFile.exists()){
-                    continue;
-                }
-            } catch(Exception e) {
-                // Debug
-                e.printStackTrace();
+            String jarPath = testFile.getName() + SEP + testFile.getName() + ".jar";
+            
+            File jarFile = new File(jarPath);
+            if (!jarFile.exists()){
+                continue;
             }
 
-            
             // Next line was commented out on 10 MAY 2015 to get system under
             //     test using UISpec4j.  Once I have a way of using UISpec4j 
             //     to select the main window of UGMT and not the splash window
@@ -268,12 +279,12 @@ public class Framework extends WindowAdapter {
 
             try {
                 JPanel plugPanel = new JPanel();
-                IPlugin plug = loader.add(pf, plugPanel, edit);
+                IPlugin plug = loader.add(testFile, plugPanel, edit);
 
                 // Find proper pane
                 int found = 0;
-                for (int j = 0; j < wl.size(); j++) {
-                    String[] list = (String[])wl.get(j);
+                for (int j = 0; j < windowList.size(); j++) {
+                    String[] list = (String[])windowList.get(j);
                     for (int k = 0; k < list.length; k++) {
                         if (list[k].equals(curr)) {
                             found = j;
@@ -284,7 +295,7 @@ public class Framework extends WindowAdapter {
 
                 Component cmp = frame[found].getContentPane().getComponent(0);
                 if (plug != null)
-                    ((JTabbedPane)cmp).add(capitalize(pf.getName()), plugPanel);
+                    ((JTabbedPane)cmp).add(capitalize(testFile.getName()), plugPanel);
 
                 // Add to list
                 if (plug != null) {
@@ -293,7 +304,7 @@ public class Framework extends WindowAdapter {
                     }
                     else {
                         plugins[found].add(plug);
-                        allPlugins.put(pf.getName(), plug);
+                        allPlugins.put(testFile.getName(), plug);
                     }
                 }
             }

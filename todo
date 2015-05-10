@@ -8,3 +8,561 @@ workaround IE-alpha
 sporadic fog bug on windows (erratic redraw)?
 sporadic map drawing problem (single pixel lines)?
 ask robin for shorkyne
+
+
+Pete todo (added 10 May 2015):
+Fix the following 100 errors
+
+<WARNINGS>
+UGMT\src\rpg\Framework.java:167: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+            windowList.add(plugs);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\rpg\Framework.java:248: warning: [unchecked] unchecked call to add(E) as a member of the raw type TreeSet
+            sort.add(all[i]);
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\rpg\Framework.java:306: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        plugins[found].add(plug);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\rpg\Framework.java:307: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                        allPlugins.put(testFile.getName(), plug);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\rpg\Framework.java:394: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+	    exports.add(e);
+	               ^
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\rpg\Framework.java:419: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type AbstractCollection
+	listenerSet.addAll((HashSet) name2listener.get(null));
+	                  ^
+  where E is a type-variable:
+    E extends Object declared in class AbstractCollection
+
+UGMT\src\rpg\Framework.java:445: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type HashMap
+	    type2name2listener.put(type,new HashMap());
+	                          ^
+  where K,V are type-variables:
+    K extends Object declared in class HashMap
+    V extends Object declared in class HashMap
+
+UGMT\src\rpg\Framework.java:450: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type HashMap
+	    name2listener.put(name,new HashSet());
+	                     ^
+  where K,V are type-variables:
+    K extends Object declared in class HashMap
+    V extends Object declared in class HashMap
+
+	UGMT\src\rpg\Framework.java:454: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+	listenerSet.add(listener);
+	               ^
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\calendar\State.java:126: warning: [unchecked] unchecked call to add(E) as a member of the raw type Set
+            actEncounters.add(ev);
+  where E is a type-variable:
+    E extends Object declared in interface Set
+
+UGMT\src\harn\calendar\State.java:128: warning: [unchecked] unchecked call to add(E) as a member of the raw type Set
+            inactEncounters.add(ev);
+  where E is a type-variable:
+    E extends Object declared in interface Set
+
+UGMT\src\harn\calendar\State.java:140: warning: [unchecked] unchecked call to TreeSet(Comparator<? super E>) as a member of the raw type TreeSet
+        TreeSet ts = new TreeSet(comp);
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\State.java:145: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type TreeSet
+            ts.addAll(wd);
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\State.java:238: warning: [unchecked] unchecked call to add(E) as a member of the raw type Set
+                if (!e.isActive()) delta.add(e);
+  where E is a type-variable:
+    E extends Object declared in interface Set
+
+UGMT\src\harn\calendar\State.java:243: warning: [unchecked] unchecked call to add(E) as a member of the raw type Set
+                if (e.isActive()) delta.add(e);
+  where E is a type-variable:
+    E extends Object declared in interface Set
+
+UGMT\src\harn\calendar\State.java:286: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+            evts.add(main.myData.getEvent
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\calendar\CalendarDisplay.java:145: warning: [unchecked] unchecked call to TreeSet(Comparator<? super E>) as a member of the raw type TreeSet
+            TreeSet ts = new TreeSet
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\CalendarDisplay.java:148: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type TreeSet
+            ts.addAll(wd);
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\CalendarDisplay.java:149: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+            wd = new ArrayList(ts);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\calendar\CalendarDisplay.java:166: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                rect2events.put(rect, wdk);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\CalendarDisplay.java:225: warning: [unchecked] unchecked call to TreeSet(Comparator<? super E>) as a member of the raw type TreeSet
+            TreeSet ts = new TreeSet
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\CalendarDisplay.java:228: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type TreeSet
+            ts.addAll(wd);
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\calendar\CalendarDisplay.java:229: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+            wd = new ArrayList(ts);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\calendar\Data.java:351: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                t.put("name", name);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:352: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                t.put("days", days);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:353: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                t.put("season", season);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:356: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                months.put(idx, t);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:385: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                events.add(ev);
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\calendar\Data.java:419: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                        t.put("name", name);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:420: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                        t.put("length", length);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:423: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                        sunsigns.put(idx, t);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\calendar\Data.java:510: warning: [unchecked] unchecked call to set(int,E) as a member of the raw type ArrayList
+                            al.set(i, ev2);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\calendar\Data.java:514: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+            if (i == al.size()) al.add(ev);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\calendar\Data.java:542: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+    public void addEvent(TimeEvent ev) { events.add(ev); }
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\calendar\Data.java:555: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+        types.put(ev, new Boolean(val));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\CharAttribute.java:136: warning: [unchecked] unchecked call to TreeSet(Comparator<? super E>) as a member of the raw type TreeSet
+        TreeSet results = new TreeSet(Collator.getInstance(Locale.FRANCE));
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\chars\CharAttribute.java:152: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                cond2adj.put(test, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\CharAttribute.java:158: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                cond2lateadj.put(test, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\Main.java:655: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+        devButtonList.add(new Object[] { b, new Boolean(a) });
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\State.java:136: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+        charlist.put(prefix + i, new MyCharacter(prefix + i));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:303: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                    charlist.put(c.cname, c);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:338: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            (prefix + i,
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:368: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                spelllist.add(e);
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\chars\State.java:376: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                equipRoot.put(e.getName(), e);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:512: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+        charlist.put(current, c);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:814: warning: [unchecked] unchecked call to TreeSet(Comparator<? super E>) as a member of the raw type TreeSet
+        TreeSet keys = new TreeSet(Collator.getInstance(Locale.FRANCE));
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\chars\State.java:815: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type TreeSet
+        keys.addAll(getSkills(mychar.getName()));
+  where E is a type-variable:
+    E extends Object declared in class TreeSet
+
+UGMT\src\harn\chars\State.java:857: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                idx.put(group, new Integer(i.intValue() + 1));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:874: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                    idx.put("Sk", new Integer(i.intValue() + 1));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1060: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                            (cattr.getNamedItem("name").getNodeValue(),
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1078: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                            (cattr.getNamedItem("name").getNodeValue(),
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1097: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                ret.attrs.put(key, attrs.get(key));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1102: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                ret.skills.put(key, skills.get(key));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1107: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                ret.notes.put(key, notes.get(key));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1174: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            attrs.put(name, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1189: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            notes.put(name, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1204: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            skills.put(name, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1209: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                skills.put(sk_sp[0], imply);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\State.java:1224: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+        public void putPrelimSkill(String nam, String val) { prels.put(nam, val); }
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\Data.java:97: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                sections.add(new Section(main, w, child, catt));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Data.java:108: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    actlist.add(al);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Printer.java:92: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                if (m.matches()) ccs.put(m.group(1), m.group(2));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\DevOption.java:95: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                optset.add(new OptionSetting(oml, test, costs, this));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\DevActionListener.java:94: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                options.add(prev);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\DevActionListener.java:98: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                attradj.add(new DevAttribute(main, child, cattr));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\DevActionListener.java:124: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                            skills.add(new OptionSetting(name, test, myoml));
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\chars\DevActionListener.java:128: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                        skills.add(new OptionSetting(name, null, oml));
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\chars\DevActionListener.java:264: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    attradj.add(new DevAttribute(main, child, cattr));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\CharSkill.java:289: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        (new CharSkill
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\CharSkill.java:310: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        (new CharSkill
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\CharSkill.java:608: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+    static public void setImply(String name, String value) { imply.put(name, value); }
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\CharSkill.java:755: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    hidden.add(cmp[i]);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\CharSkill.java:822: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        hidden.add(cmp[i]);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\RandTable.java:66: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+        rand.add(new Integer(Integer.parseInt(val)));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\RandTable.java:83: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                    cond2adj.put(test, vals);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\RandTable.java:87: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                (new Object[] {
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\RandTable.java:99: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                    attributes.add(new DevAttribute(main, child, cattr));
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\chars\RandTable.java:102: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+            results.add(res);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\RandTable.java:104: warning: [unchecked] unchecked call to add(E) as a member of the raw type Set
+                extresults.add(res);
+  where E is a type-variable:
+    E extends Object declared in interface Set
+
+UGMT\src\harn\chars\CharHeraldry.java:69: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                tests.add(new MyTest(test, value));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Section.java:83: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    (new CharAttribute(main, ew, idx++, child, cattr, panel));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Section.java:92: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    (new CharSkill(main.hideb, state, ew, idx++, child, cattr, panel));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Section.java:97: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    (new CharHeraldry(main, child, cattr, panel));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\Section.java:102: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                    (new CharNote(main, ew, idx++, cattr, panel, this));
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\chars\CondTable.java:58: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+        cond2table.put(test, table);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\DevAttribute.java:99: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                cond2adj.put(test, val);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\OptionSetting.java:97: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            skills.put(skill, idx);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\chars\OptionSetting.java:112: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            skills.put(skill, new Integer(i+1));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\combat\ArmourAnalysis.java:69: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+                    nvalues.put(key, vavals);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\combat\ArmourAnalysis.java:100: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            values.put(key, nvalues.get(key));
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\combat\ArmourAnalysis.java:117: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type Hashtable
+            values.put(prefix + postfix, dual);
+  where K,V are type-variables:
+    K extends Object declared in class Hashtable
+    V extends Object declared in class Hashtable
+
+UGMT\src\harn\combat\ArmourAnalysis.java:139: warning: [unchecked] unchecked call to set(int,E) as a member of the raw type LinkedList
+                    rowNames.set(i, key);
+  where E is a type-variable:
+    E extends Object declared in class LinkedList
+
+UGMT\src\harn\combat\ArmourAnalysis.java:140: warning: [unchecked] unchecked call to add(int,E) as a member of the raw type LinkedList
+                    rowNames.add(i, prefix + postfix);
+  where E is a type-variable:
+    E extends Object declared in class LinkedList
+
+UGMT\src\harn\combat\ArmourAnalysis.java:167: warning: [unchecked] unchecked call to add(E) as a member of the raw type HashSet
+                        ret.add(item.material());
+  where E is a type-variable:
+    E extends Object declared in class HashSet
+
+UGMT\src\harn\combat\Data.java:146: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                            (new Object[] { name, help, choices, clas });
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\combat\Data.java:153: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                rules.add(att);
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\combat\Data.java:215: warning: [unchecked] unchecked call to add(E) as a member of the raw type LinkedList
+                            rowNames.add(tmp[k]);
+  where E is a type-variable:
+    E extends Object declared in class LinkedList
+
+UGMT\src\harn\combat\Data.java:216: warning: [unchecked] unchecked call to add(E) as a member of the raw type LinkedList
+                        rowNames.add("-");
+  where E is a type-variable:
+    E extends Object declared in class LinkedList
+
+UGMT\src\harn\combat\Data.java:237: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                matNames.add(child.getAttributes().getNamedItem("name").getNodeValue());
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+
+UGMT\src\harn\combat\Data.java:284: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                armourNames.add(child.getAttributes().getNamedItem("name").getNodeValue());
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+	
+Note: 
+UGMT\src\harn\log\State.java uses or overrides a deprecated API.
+
+Note: Some input files additionally use unchecked or unsafe operations.
+100 warnings
+<WARNINGS>
